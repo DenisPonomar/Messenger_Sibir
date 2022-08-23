@@ -19,10 +19,14 @@
 * face.jpg - фото пользователя
 * message.txt - переписка с пользователя, которая представлена в виде двумерного массивва, типа [['0K3RgtC+INCY0LfQsdGA0LDQvdC90L7QtSE=', '0', 1]], где '0K3RgtC+INCY0LfQsdGA0LDQvdC90L7QtSE=' - отдельное сообщение, закодированное в base64; '0' - сообщение отправил пользователь (если '0', то контакт); 1 - время в секундах в виде числа с плавающей точкой, прошедшее с 1 января 1970 года, 00:00:00 (UTC)
 * name.txt - содержит имя пользователя
+* 
 Кнопка с симолом "+" оставлена для дальнейшей разработки и не является функциональной
+
 ![изображение](https://user-images.githubusercontent.com/104255472/186124806-d01cb407-4311-445f-92ee-38c091ad26da.png)
 ![изображение](https://user-images.githubusercontent.com/104255472/186124906-bb8d25c6-47d0-4937-83cc-e4feec2ef5eb.png)
 ![изображение](https://user-images.githubusercontent.com/104255472/186124986-acabcf27-befc-4684-947b-6597d96b0f24.png)
+
 Избранное не редактируется, как пользователь
+
 ![изображение](https://user-images.githubusercontent.com/104255472/186125125-f738f3d5-356d-4dd1-9c2e-fd9f7dc13598.png)
 ![изображение](https://user-images.githubusercontent.com/104255472/186125217-5cb4f8a2-a161-40a6-99dc-e06dfe62e6b3.png)
