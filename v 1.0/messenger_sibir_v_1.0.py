@@ -189,7 +189,6 @@ screen.blit(t1, t_r)
 pygame.display.flip()
 y = soob_pol
 def Spisok_soob():
-    print(name)
     global per_y
     global fm
     global soob_pol
