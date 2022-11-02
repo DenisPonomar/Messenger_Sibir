@@ -11,8 +11,7 @@ class MyServer(http.server.BaseHTTPRequestHandler):
         pass
     def do_GET(self): #the do_GET method is inherited from BaseHTTPRequestHandler
         zapros = self.requestline.split()[1][1:].split("!")
-        print(zapros)
-        if 42 == 42:
+        try:
             if zapros[0] == "a":
                 token_otpravitel = zapros[1]
                 hash_token_otpravitel = hashlib.sha256(token_otpravitel.encode("utf-8")).hexdigest()
@@ -22,7 +21,6 @@ class MyServer(http.server.BaseHTTPRequestHandler):
                     if len(papka) > 0:
                         for i in range(len(papka)):
                             pod_papka = os.listdir(str(hash_token_otpravitel+"/"+papka[i]))
-                            #pod_papka.sort()
                             if len(pod_papka) == 0:
                                 continue
                             else:
@@ -40,7 +38,6 @@ class MyServer(http.server.BaseHTTPRequestHandler):
                             self.send_response(404)
                             self.send_header("Content-type", "text/html;charset=utf-8")
                             self.end_headers()
-                            print(45)
                     else:
                         self.send_response(404)
                         self.send_header("Content-type", "text/html;charset=utf-8")
@@ -65,17 +62,16 @@ class MyServer(http.server.BaseHTTPRequestHandler):
                 f.write(soob_otpravitel)
                 f.close()
                 
-                #print(self.path[1:])
                 self.send_response(200)
                 self.send_header("Content-type", "text/html;charset=utf-8")
                 self.end_headers()
                 self.wfile.write(str(server_time).encode("utf-8"))
             else:
                 pass
-        """except Exception:
+        except Exception:
             self.send_response(500)
             self.send_header("Content-type", "text/html;charset=utf-8")
-            self.end_headers()"""
+            self.end_headers()
 if __name__ == "__main__":        
   webServer = http.server.ThreadingHTTPServer((hostName, serverPort), MyServer)
   print("Server started http://%s:%s" % (hostName, serverPort))  #Server starts
